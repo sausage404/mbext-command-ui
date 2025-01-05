@@ -1,0 +1,5 @@
+# TypeScript files
+src
+tsconfig.json
+package-lock.json
+.github/
