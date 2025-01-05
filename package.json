@@ -1,7 +1,7 @@
 {
     "name": "@mbext/command",
     "version": "1.0.3",
-    "description": "Custom command and autocomplete command for Minecraft Bedrock development",
+    "description": "Custom command and autocomplete command for minecraft bedrock development",
     "author": "sausage404",
     "main": "dist/handlers/bundle.js",
     "types": "types/index.d.ts",
