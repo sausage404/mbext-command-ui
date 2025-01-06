@@ -4,7 +4,7 @@
     "description": "Autocomplete custom command for minecraft bedrock development",
     "author": "sausage404",
     "main": "dist/bundle.js",
-    "license": "GNU-3.0",
+    "license": "GPL-3.0-only-3.0",
     "bin": {
         "create-command-ui": "bin/index.js"
     },
