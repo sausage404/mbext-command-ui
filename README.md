@@ -1,4 +1,4 @@
-# Custom Command for Minecraft Bedrock Development
+# Autocomplete Custom command for Minecraft Bedrock Development
 
 [![npm version](https://badge.fury.io/js/%40mbext%2Fcommand-ui.svg)](https://badge.fury.io/js/%40mbext%2Fcommand-ui)
 

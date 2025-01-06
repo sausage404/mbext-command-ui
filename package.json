@@ -1,7 +1,7 @@
 {
     "name": "@mbext/command-ui",
     "version": "1.0.0",
-    "description": "Autocomplete Custom command for minecraft bedrock development",
+    "description": "Autocomplete custom command for minecraft bedrock development",
     "author": "sausage404",
     "main": "dist/bundle.js",
     "license": "GNU-3.0",
