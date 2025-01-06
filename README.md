@@ -2,9 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/%40mbext%2Fcommand-ui.svg)](https://badge.fury.io/js/%40mbext%2Fcommand-ui)
 
-`@mbext/command-ui` A TypeScript tool that generates UI JSON files for Minecraft commands based on a configuration file.
-
-**JSON UI**: The original file template was taken from [Pablo](https://www.youtube.com/@Pablo4517) following the https://www.youtube.com/watch?v=5Er6ttStoCY
+`@mbext/command-ui` A TypeScript tool that generates UI JSON files for Minecraft commands based on a configuration file, The original json ui file template was taken from [Pablo](https://www.youtube.com/@Pablo4517) following the https://www.youtube.com/watch?v=5Er6ttStoCY
 
 ## Features
 
