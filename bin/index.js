@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('../dist/display/bundle.js');
+require('../dist/bundle.js');

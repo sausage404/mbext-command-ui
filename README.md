@@ -1,120 +1,35 @@
-# Custom Command for Minecraft Bedrock deverlopment
+# Custom Command for Minecraft Bedrock Development
 
-[![npm version](https://badge.fury.io/js/%40mbext%2Fcommand.svg)](https://badge.fury.io/js/%40mbext%2Fcommand)
+[![npm version](https://badge.fury.io/js/%40mbext%2Fcommand-ui.svg)](https://badge.fury.io/js/%40mbext%2Fcommand-ui)
 
-`@mbext/command` is a library that allows you to create custom commands for Minecraft Bedrock development, including autocompletion and command handling.
+`@mbext/command-ui` A TypeScript tool that generates UI JSON files for Minecraft commands based on a configuration file.
+
+**JSON UI**: The original file template was taken from [Pablo](https://www.youtube.com/@Pablo4517) following the https://www.youtube.com/watch?v=5Er6ttStoCY
 
 ## Features
 
-- Type-safe command handling with TypeScript
-- Support for nested subcommands
-- Argument validation and type conversion
-- Built for Minecraft Bedrock Edition
-- Error handling and validation
-- Autocompletion for commands
-- Command execution with arguments and options
-
+- Generates UI components for command panels and chat screens
+- Supports nested subcommands
+- Handles different argument types (String, Number, Boolean, Player)
+- Automatic command possibilities generation
+- String obfuscation for security
+  
 ## Usage
 
 You can use this package directly with npx without installing it globally.
+And in the project, it must be used with `command.config.json` files, but if you want a handler command, use the following package [`@mbext/command-handler`](https://github.com/sausage404/mbext-command-handler)
 
-### Available Commands
-
-1. **Initialize a new project**
-
-   ```bash
-   npx @mbext/command init
-   ```
-
-   This command will initialize a new json config in the current directory.
-
-2. **Compile the project**
-
-   ```bash
-   npx @mbext/command ui
-   ```
-
-   Create a new json ui for autocomplate command from `command.config.json`.
-
-### Examples
-
-This a type for config arguments
-
-```ts
-export enum ArgumentType {
-    String = 0,
-    Number = 1,
-    Boolean = 2,
-    Player = 3
-}
+```bash
+npx create-command-ui
 ```
 
-You can config command in file `command.config.json`.
+The tool generates the following files in the ui directory:
 
-```json
-{
-    "prefix": "!",
-    "commands": {
-      "give": {
-        "description": "Give an item to a player",
-        "arguments": {
-          "player": {
-            "description": "The player to give the item to",
-            "type": 0
-          },
-          "item": {
-            "description": "The item to give",
-            "type": 0
-          },
-          "amount": {
-            "description": "The amount of the item to give",
-            "type": 1
-          }
-        },
-        "allowedArguments": {
-          "main": [
-            "player",
-            "item",
-            "amount"
-          ]
-        }
-      }
-    }
-}
-```
-When you config command in file `command.config.json`, you can use command like this
-
-```ts
-import { world } from '@minecraft/server'
-import { CommandHandler } from '@mbext/command'
-import commandConfig from './command.config.json'
-
-const handler = new CommandHandler(commandConfig);
-
-handler.validate("give", "item", (argument) => {
-   if(!argument.item.startsWith("minecraft:")) 
-      return false
-   if(!argument.amount < 1)
-      return false
-   return true
-})
-
-handler.on("give", ({ player, argument }) => {
-   const inventory = (player.getComponent("inventory") as EntityInventoryComponent);
-   const container = inventory.container;
-   const item = new ItemStack(argument.item, argument.amount)
-   container?.addItem(item);
-})
-
-world.beforeEvent.chatSend.subscribe((data) => {
-   const player = data.sender;
-   const message = data.message;
-   if(handler.verify(message)){
-      event.cancel = true;
-      handler.run(message, player);
-   }
-})
-```
+* _global_variables.json: Global command prefix
+* chat_screen.json: Chat interface configuration
+* command_panel.json: Command panel layout
+* command_config.json: Command definitions and possibilities
+* _ui_defs.json: UI definitions index
 
 ## License
 
