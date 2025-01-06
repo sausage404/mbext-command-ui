@@ -2,14 +2,13 @@ const path = require('path');
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
-    entry: './index.ts',
+    entry: './src/index.ts',
     target: 'node',
     output: {
-        path: path.resolve(__dirname, '..', '..', 'dist', 'handlers'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        module: true,
         library: {
-            type: 'module',
+            type: 'commonjs',
         }
     },
     resolve: {
@@ -26,8 +25,5 @@ module.exports = {
                 exclude: /node_modules/
             }
         ],
-    },
-    experiments: {
-        outputModule: true
     }
 };

@@ -1,4 +1,4 @@
-import { Argument, ArgumentType, CommandConfig, SubCommand } from '../types';
+import { Argument, ArgumentType, CommandConfig, SubCommand } from './types';
 import chalk from 'chalk';
 
 function getCommandPossibilities(config: CommandConfig) {

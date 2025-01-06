@@ -1,32 +1,27 @@
 {
-    "name": "@mbext/command",
+    "name": "@mbext/command-ui",
     "version": "1.0.0",
-    "description": "Custom command and autocomplete command for minecraft bedrock development",
+    "description": "Autocomplete Custom command for minecraft bedrock development",
     "author": "sausage404",
-    "main": "dist/handlers/bundle.js",
-    "types": "types/index.d.ts",
-    "license": "SEE LICENSE IN LICENSE",
+    "main": "dist/bundle.js",
+    "license": "GNU-3.0",
     "bin": {
-        "@mbext/command": "bin/index.js"
+        "create-command-ui": "bin/index.js"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/sausage404/mbext-command.git"
+        "url": "https://github.com/sausage404/mbext-command-ui.git"
     },
     "scripts": {
-        "build": "npm run build:display && npm run build:handlers",
-        "build:display": "cd ./src/display && webpack --mode production",
-        "build:handlers": "cd ./src/handlers && webpack --mode production",
-        "dev": "npm run dev:display & npm run dev:handlers",
-        "dev:display": "cd ./src/display && webpack --mode development --watch",
-        "dev:handlers": "cd ./src/handlers && webpack --mode development --watch"
+        "build": "webpack --mode production",
+        "dev": "webpack --mode development --watch"
     },
     "devDependencies": {
         "@minecraft/server": "^1.17.0-beta.1.21.51-stable",
         "@types/fs-extra": "^11.0.4",
         "chalk": "^5.4.1",
-        "commander": "^13.0.0",
         "fs-extra": "^11.2.0",
+        "inquirer": "^12.3.0",
         "ts-loader": "^9.5.1",
         "webpack": "^5.97.1",
         "webpack-cli": "^6.0.1"
