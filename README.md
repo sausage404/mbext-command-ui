@@ -18,7 +18,7 @@ You can use this package directly with npx without installing it globally.
 And in the project, it must be used with `command.config.json` files, but if you want a handler command, use the following package [`@mbext/command-handler`](https://github.com/sausage404/mbext-command-handler)
 
 ```bash
-npx create-command-ui
+npx @mbext/command-ui
 ```
 
 The tool generates the following files in the ui directory:
